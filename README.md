@@ -36,7 +36,7 @@ please modify the `test_mode` command argument accordingly. There are four diffe
 1. Download the pretrained model and put it to `$ROOT/data/trained_model/if_nerf/demo/latest.pth`.
 2. Quantitative evaluation:
     ```
-    CUDA_VISIBLE_DEVICES=0 python run.py --type evaluate --cfg_file configs/train_or_eval.yaml virt_data_root data/zju_mocap rasterize_root data/zju_rasterization ratio 0.5 H 1024 W 1024 test_input_view "0,7,15" run_mode test test_mode model_x_motion_x exp_name demo resume True test_sample_cam True test.epoch -1 exp_folder_name debug gpus "0,"
+    CUDA_VISIBLE_DEVICES=0 python run.py --type evaluate --cfg_file configs/train_or_eval.yaml virt_data_root /database/zju_mocap rasterize_root /database/zju_rasterization ratio 0.5 H 1024 W 1024 test_input_view "0,7,15" run_mode test test_mode model_x_motion_x exp_name demo resume True test_sample_cam True test.epoch -1 exp_folder_name debug gpus "0,"
     ```
 3. The results (images, summary) will be saved at `$ROOT/data/result/if_nerf/{$exp_name}/epoch_{$test.epoch}/{$exp_folder_name}`
 
@@ -47,7 +47,7 @@ please modify the `test_mode` command argument accordingly. There are four diffe
     ```
     # render frames
     # results will be saved at '$ROOT/data/perform/{$exp_name}/epoch_{$test.epoch}/{$exp_folder_name}'
-    CUDA_VISIBLE_DEVICES=0 python run.py --type visualize --cfg_file configs/performance.yaml virt_data_root data/zju_mocap rasterize_root data/zju_rasterization ratio 0.5 H 1024 W 1024 test_input_view "0,7,15" test_mode model_x_motion_x exp_name demo resume True test.epoch -1 exp_folder_name debug gpus "0,"
+    CUDA_VISIBLE_DEVICES=0 python run.py --type visualize --cfg_file configs/performance.yaml virt_data_root /database/zju_mocap rasterize_root /database/zju_rasterization ratio 0.5 H 1024 W 1024 test_input_view "0,7,15" test_mode model_x_motion_x exp_name demo resume True test.epoch -1 exp_folder_name debug gpus "0,"
     
     # generate video
     python gen_freeview_video.py 
