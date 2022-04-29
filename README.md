@@ -75,7 +75,7 @@ please modify the `test_mode` command argument accordingly. There are four diffe
 1. Train:
     ```
     # training
-    CUDA_VISIBLE_DEVICES=0 python train_net.py --cfg_file configs/train_or_eval.yaml virt_data_root data/zju_mocap rasterize_root data/zju_rasterization ratio 0.5 H 1024 W 1024 run_mode train jitter True exp_name nhp resume True gpus "0,"
+    CUDA_VISIBLE_DEVICES=0 python train_net.py --cfg_file configs/train_or_eval.yaml virt_data_root /datgabase/zju_mocap rasterize_root /database/zju_rasterization ratio 0.5 H 1024 W 1024 run_mode train jitter True exp_name nhp resume True gpus "0,"
     ```
 
 3. Tensorboard:
